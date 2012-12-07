@@ -32,7 +32,7 @@ end
 
 execute "nyan nyan nyan" do
   command "echo 'log_level :fatal' >> #{Chef::Config['config_file']}"
-  not_if "grep 'formatter :fatal' #{Chef::Config['config_file']}"
+  not_if "grep 'log_level :fatal' #{Chef::Config['config_file']}"
 end
 
 execute "nyan nyan nyan nyan" do
