@@ -20,23 +20,23 @@
 
 chef_gem "nyan-cat-chef-formatter"
 
-execute "nyan" do
-  command "echo \"gem 'nyan-cat-chef-formatter'\" >> #{Chef::Config['config_file']}"
-  not_if "grep \"gem 'nyan-cat-chef-formatter'\" #{Chef::Config['config_file']}"
+append_if_no_line "nyan" do
+  file  Chef::Config['config_file']
+  string "gem 'nyan-cat-chef-formatter'"
 end
 
-execute "nyan nyan" do
-  command "echo \"require 'nyan-cat-chef-formatter'\" >> #{Chef::Config['config_file']}"
-  not_if "grep \"require 'nyan-cat-chef-formatter'\" #{Chef::Config['config_file']}"
+append_if_no_line "nyan nyan" do
+  file  Chef::Config['config_file']
+  string "require 'nyan-cat-chef-formatter'"
 end
 
-execute "nyan nyan nyan" do
-  command "echo 'log_level :fatal' >> #{Chef::Config['config_file']}"
-  not_if "grep 'log_level :fatal' #{Chef::Config['config_file']}"
+append_if_no_line "nyan nyan nyan" do
+  file  Chef::Config['config_file']
+  string "log_level :fatal"
 end
 
-execute "nyan nyan nyan nyan" do
-  command "echo 'formatter \"nyan\"' >> #{Chef::Config['config_file']}"
-  not_if "grep 'formatter \"nyan\"' #{Chef::Config['config_file']}"
+append_if_no_line "nyan nyan nyan" do
+  file  Chef::Config['config_file']
+  string "formatter \"nyan\""
 end
 
