@@ -21,22 +21,22 @@
 chef_gem "nyan-cat-chef-formatter"
 
 append_if_no_line "nyan" do
-  file  Chef::Config['config_file']
-  string "gem 'nyan-cat-chef-formatter'"
+  path  Chef::Config['config_file']
+  line "gem 'nyan-cat-chef-formatter'"
 end
 
 append_if_no_line "nyan nyan" do
-  file  Chef::Config['config_file']
-  string "require 'nyan-cat-chef-formatter'"
+  path  Chef::Config['config_file']
+  line "require 'nyan-cat-chef-formatter'"
 end
 
 append_if_no_line "nyan nyan nyan" do
-  file  Chef::Config['config_file']
-  string "log_level :fatal"
+  path  Chef::Config['config_file']
+  line "log_level :fatal"
 end
 
 append_if_no_line "nyan nyan nyan" do
-  file  Chef::Config['config_file']
-  string "formatter \"nyan\""
+  path  Chef::Config['config_file']
+  line "formatter \"nyan\""
 end
 
