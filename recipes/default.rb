@@ -35,7 +35,7 @@ append_if_no_line "nyan nyan nyan" do
   line "log_level :fatal"
 end
 
-append_if_no_line "nyan nyan nyan" do
+append_if_no_line "nyan nyan nyan nyan" do
   path  Chef::Config['config_file']
   line "formatter \"nyan\""
 end
